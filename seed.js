@@ -13,3 +13,16 @@
 //   console.log("Created new campsite", campsite._id)
 //   process.exit(); // we're all done! Exit the program.
 // })
+
+
+var db = require('./models')
+
+
+db.Movie.deleteMany({}, (err, deletedMovies) => {
+	if (err) {
+		console.log(err)
+
+	}
+
+	
+})
