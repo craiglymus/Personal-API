@@ -7,11 +7,12 @@
     <title>Blank</title>
 
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles/styles.css">
 
     <!-- VENDOR SCRIPTS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous" defer></script>
 
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/app.js" defer></script>
@@ -26,13 +27,15 @@
         <form class="form-inline" id="newBookForm">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" class="form-control" name="title" placeholder="Book title">
+            <input type="text" class="form-control" name="title" placeholder="Movie Title">
           </div>
           <div class="form-group">
-            <label for="title">Author</label>
-            <input type="text" class="form-control" name="author" placeholder="Book author">
+            <label for="title">Director</label>
+            <input type="text" class="form-control" name="director" placeholder="Movie Director">
+            <label for="title">Year Released</label>
+            <input type="text" class="form-control" name="yearOfRelease" placeholder="Year Released">
           </div>
-          <button type="submit" class="btn btn-default">Create book</button>
+          <button type="submit" class="btn btn-default">Create Movie</button>
         </form>
         <div class ='list-container'> 
         </div>

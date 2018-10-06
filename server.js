@@ -2,6 +2,8 @@
 const express = require('express');
 const app = express();
 
+
+
 // parse incoming urlencoded form data
 // and populate the req.body object
 const bodyParser = require('body-parser');
@@ -37,6 +39,7 @@ const db = require('./models');
 
  app.post('/api/movies', (req, res) =>{
    let moviesData = req.body
+   console.log(moviesData);
    db.Movie.create(moviesData, (err, savedMovie) => {
     if (err){
     console.log(err);
