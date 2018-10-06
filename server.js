@@ -19,11 +19,34 @@ app.use(function(req, res, next) {
  * DATABASE *
  ************/
 
-// const db = require('./models');
+const db = require('./models');
 
 /**********
  * ROUTES *
  **********/
+
+ app.get('/api/movies', (req, res) => {
+  db.Movie.find({}, (err, movies) => {
+    if(err){
+      console.log(err);
+    }
+    res.json({data:movies})
+  })
+});
+
+
+ app.post('/api/movies', (req, res) =>{
+   let moviesData = req.body
+   db.Movie.create(moviesData, (err, savedMovie) => {
+    if (err){
+    console.log(err);
+    }
+    res.json(savedMovie)
+   })
+ })
+
+
+
 
 // Serve static files from the `/public` directory:
 // i.e. `/images`, `/scripts`, `/styles`

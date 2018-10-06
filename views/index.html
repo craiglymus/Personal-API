@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="/styles/styles.css">
 
     <!-- VENDOR SCRIPTS -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js" defer></script>
 
     <!-- APPLICATION SCRIPTS -->
-    <script src="/scripts/app.js"></script>
+    <script src="/scripts/app.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -22,6 +22,19 @@
         <div class="col-md-8 col-md-offset-2">
           <h1>Under Construction</h1>
           <h4><a href="/api">Read My API Documentation</a></h4>
+        </div>
+        <form class="form-inline" id="newBookForm">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" placeholder="Book title">
+          </div>
+          <div class="form-group">
+            <label for="title">Author</label>
+            <input type="text" class="form-control" name="author" placeholder="Book author">
+          </div>
+          <button type="submit" class="btn btn-default">Create book</button>
+        </form>
+        <div class ='list-container'> 
         </div>
       </div>
     </div>
