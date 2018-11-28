@@ -1,10 +1,15 @@
 body {
-  color: #333;
+  color: black;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: skyblue; /* Sanity Check! */
+  background-color: whitesmoke; 
+  background: center center no-repeat url('../images/theater.jpg');
+  background-size: cover;
 }
 
 h1 {
-  margin-top: 100px;
   text-align: center;
+}
+
+.container {
+	height: 100vh;
 }

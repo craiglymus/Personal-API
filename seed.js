@@ -24,5 +24,5 @@ db.Movie.deleteMany({}, (err, deletedMovies) => {
 
 	}
 
-	
+	console.log('removed movie')
 })

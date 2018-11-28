@@ -37,17 +37,45 @@ const db = require('./models');
 });
 
 
+
+
  app.post('/api/movies', (req, res) =>{
    let moviesData = req.body
-   console.log(moviesData);f
+
+   console.log('THIS IS THE MOVIE DATA!!!!!' + moviesData);
    db.Movie.create(moviesData, (err, savedMovie) => {
-    if (err){
-    console.log(err);
-    }
-    res.json(savedMovie)
+    if (err){console.log(err)}
+      res.json({data:savedMovie})
    })
  })
 
+ app.get('/api/profile', (req, res) => {
+  db.Profile.find({}, (err, profile) => {
+    if(err){
+      console.log(err);
+    }
+    res.json({data:profile})
+  })
+ });
+
+ app.delete(`/api/movies/:id`, (req, res) => {
+  let movieId = req.params.id;
+  console.log(movieId)
+  db.Movie.deleteOne({_id: movieId}, (err, deletedMovie) => {
+    
+    if (err) {
+      return console.log(err)
+    }
+
+    res.json(deletedMovie)
+  })
+});
+
+
+
+// app.put('/api/movies', (req, res) => {
+//   db.Movie.findOneAndUpdate
+// })
 
 
 
@@ -79,8 +107,8 @@ app.get('/api', (req, res) => {
     baseUrl: "https://dashboard.heroku.com/apps/craigs-personal-api", 
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/movie", description: "Details about movie"}, 
-      {method: "POST", path: "/api/??????", description: "Creates a new movie"} // CHANGE ME
+      {method: "GET", path: "/api/movies", description: "Details about movie"}, 
+      {method: "POST", path: "/api/movies", description: "Creates a new movie"} // CHANGE ME
     ]
   })
 });
